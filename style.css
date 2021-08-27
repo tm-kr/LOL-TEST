@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@700&display=swap');
+body{
+  background-color: #000913;
+  color:white;
+  font-style: italic;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+article{
+  text-align: center;
+}
+h5 {
+  font-size: 15px;
+}
+#line{
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#explain{
+  margin-left: 7%;
+  margin-right: 7%;
+  padding: 5%;
+}
+#img{
+  width: 320px;
+  height: 190px;
+}
+#img1{
+  width: 320px;
+  height: 190px;
+}
+#explain1{
+  margin-left: 7%;
+  margin-right: 7%;
+  padding: 5%;
+}
+.question{
+  display: none;
+}
+.question button{
+  font-size: 1.2rem;
+  width: 40%;
+  height: 14rem;
+}
+.result{
+  display: none;
+}
+.main button{
+  width: 300px;
+}
+.start button{
+  width: 300px;
+}
+.result button{
+  width: 86%;
+  height: 3rem
+}
+.share{
+  text-align: center;
+  padding: 15px;
+}
+.kakao{
+  width: 320px;
+  margin: 0 auto;
+}
+.kakao1{
+  width: 300px;
+  margin: 0 auto;
+}
+.layout{
+  margin: auto;
+}
+
+@media all and (min-width:768px) and (max-width: 1023px) {
+  #img{
+    -ms-interpolation-mode:bicubic;
+    width: 70%;
+    height: auto;
+  }
+  #img1{
+    -ms-interpolation-mode:bicubic;
+    width: 70%;
+    height: auto;
+  }
+  h1{
+    font-size: 43px;
+  }
+  h2{
+    font-size: 35px;
+  }
+  h3{
+    font-size: 35px;
+  }
+  h5{
+    font-size: 20px;
+  }
+  .layout{
+    margin: auto;
+    margin-top: 2%;
+    width: 600px;
+  }
+}
+@media all and (min-width:1024px){
+  #img{
+    -ms-interpolation-mode:bicubic;
+    width: 75%;
+    height: auto;
+  }
+  #img1{
+    -ms-interpolation-mode:bicubic;
+    width: 75%;
+    height: auto;
+  }
+  h1{
+    font-size: 48px;
+  }
+  h2{
+    font-size: 40px;
+  }
+  h3{
+    font-size: 40px;
+  }
+  h5{
+    font-size: 25px;
+  }
+  .layout{
+    margin: auto;
+    margin-top: 2%;
+    width: 650px;
+  }
+  .ltop{
+    margin: auto;
+    margin-top: 3%;
+    padding: 2%;
+    width: 800px;
+  }
+  .lay{
+    margin: auto;
+    width: 1100px;
+  }
+}
+
+
+
+
+/*
+아래 태그는 네이버 방화벽 문제를 해결해 네이버에 검색되게 해주는 코드이다.
+*/
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebit/53.7.36 (KHTML, like Gecko) Chrome/63.0.3239.0 Safari/537.36 (compatible; Yeti/1.1; +http://naver.me/spd)

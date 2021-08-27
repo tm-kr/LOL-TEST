@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서포터 챔피언 추천</title>
+    <meta name="description" content=" 나에게 가장 어울리는 챔피언을 추천해드립니다. ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="롤 챔피언 추천 테스트">
+    <meta property="og:description" content=" 나에게 가장 어울리는 챔피언을 추천해드립니다. ">
+    <meta property="og:image" content="https://loltest.netlify.app//poro.jpg">
+    <meta property="og:url" content="https://loltest.netlify.app/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <article class="start">
+      <h1 class="mt-5">당신에게 어울리는</h1>
+      <h2>서포터 챔피언은?!</h2>
+      <button type="button" class="btn btn-outline-warning mt-5 " onclick="start();">테스트 시작하기</button><br><br>
+      <button type="button" class="btn btn-outline-warning " onclick="location.href='index.html'">다른 라인 추천 받기</button>
+      <article class="kakao1 mt-5">
+        <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-mVH6QBp9jVOVhyJZ"
+         data-ad-width   = "300"
+         data-ad-height  = "250"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+    </article>
+
+    <article class="question ltop border border-warning">
+      <div class="progress mt-5">
+        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: calc(100/5*1%)"></div>
+      </div>
+      <h2 id="title" class="mt-5">문제</h2>
+      <input id="type" type="hidden" value="QA">
+      <button id="A" type="button" class="btn btn-outline-warning mt-5 ">1</button>
+      <button id="B" type="button" class="btn btn-outline-warning mt-5 ">2</button>
+      <article class="kakao mt-5">
+        <ins class="kakao_ad_area mb-5" style="display:none;"
+           data-ad-unit    = "DAN-4OgJeKWpFcJt4Zjg"
+           data-ad-width   = "320"
+           data-ad-height  = "100"></ins>
+         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+    </article>
+
+    <article class="result lay">
+      <h1 id="line" class="mt-5 border border-warning rounded border border-1">추천 챔피언</h1>
+      <h1 id="nick" class="mt-5">닉네임</h1>
+      <h2 id="champion">챔피언</h2>
+      <img id="img" src="" class="border border-warning rounded border border-1" alt="챔피언 이미지">
+      <h3 id="speech"class="mt-5">대사</h3>
+      <h5 id="explain"class="mt-5 border border-warning rounded border border-1">설명</h5>
+      <article class="kakao mt-5">
+        <ins class="kakao_ad_area" style="display:none;"
+           data-ad-unit    = "DAN-4OgJeKWpFcJt4Zjg"
+           data-ad-width   = "320"
+           data-ad-height  = "100"></ins>
+         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+      <h1 id="nick1" class="mt-5"></h1>
+      <h2 id="champion1"></h2>
+      <img id="img1" src="poro.jpg" class="border border-warning rounded border border-1" alt="챔피언 이미지2">
+      <h3 id="speech1"class="mt-5"></h3>
+      <h5 id="explain1"class="mt-5 border border-warning rounded border border-1">이 챔피언과 함께 티어를 올려보세요!</h5>
+
+      <button type="button" class="btn btn-outline-warning mt-5" onclick="location.href='sup.html'">다시하기</button>
+      <h6 class="mt-5">친구들과 공유하고 결과를 비교해보세요!</h6>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_97d6 share"></div>
+
+      <h6 class="mt-5">이미지 출처: 리그 오브 레전드 공식 홈페이지</h6>
+    </article>
+    <input type="hidden" id="QA" value="0">
+    <input type="hidden" id="WS" value="0">
+    <input type="hidden" id="ED" value="0">
+    <input type="hidden" id="RF" value="0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script>
+      var num = 1;
+      var q= {
+        1: {"title": "내가 중요하게 생각하는 스킬은?", "type": "QA", "A": "맞추기 쉽지만 지속시간이 짧은 cc기", "B": "맞추기는 어렵지만 지속시간이 긴 cc기"},
+        2: {"title": "내가 선호하는 챔피언 특징은?", "type": "WS", "A": "지속적인 포킹으로 라인전 이득 보는 챔피언", "B": "갱호응 특화 챔피언"},
+        3: {"title": "내가 선호하는 궁극기는?", "type": "ED", "A": "순간적인 딜을 넣어주는 궁극기", "B": "게임의 변수를 만들어 주는 궁극기"},
+        4: {"title": "바텀 라인전 승리시 이용할 전략은?", "type": "RF", "A": "바텀 라인전 압박!", "B": "다른 라인 로밍!"}
+      }
+      var result = {
+        "QWER" : {"nick":"초월한 마법사", "champion": "제라스", "explain": "고대 슈리마의 초월한 마법사 제라스는 신비의 에너지가 석관의 파편에 둘러싸인 형상을 하고 있다. 그는 사막 아래의 고대 감옥 속에 수천 년 동안 갇혀 있다가 슈리마 제국의 부활과 함께 자유의 몸이 되었다. 막강한 힘을 손에 넣은 제라스는 응당 자신의 것이라 여기는 것들을 찬탈하고 신흥 문명 정복으로 자신만의 제국을 세우고자 광기의 질주를 시작한다.", "speech": '" 난.. 해방될 것이다! "', "img": "xe.jpg",
+        "nick1":"공허의 눈", "champion1": "벨코즈", "explain1": "벨코즈가 룬테라에 나타난 첫 번째 공허태생인지는 확실하지 않다. 다만 벨코즈만큼 잔혹하면서 계산적인 지성체는 이제껏 존재하지 않았다. 다른 공허태생들은 주변의 모든 것을 닥치는 대로 집어삼키고 부패시키지만, 벨코즈는 현실 세계뿐 아니라 현실 세계에 사는 호전적이고 낯선 생명체들을 자세히 관찰하고 연구하여 공허가 이용할 수 있는 약점을 찾아낸다. 그렇다고 벨코즈가 그저 수동적인 관찰자라는 말은 아니다. 위협을 느끼면 치명적인 플라즈마 광선을 발사하거나 세상의 구성 자체를 분열시키는 방식으로 반격하기 때문이다.", "speech1": '" 해체하여, 지식을 습득한다... "', "img1": "vel.jpg"},
+        "QWEF" : {"nick":"악마 어릿광대", "champion": "샤코", "explain": "샤코는 오래 전, 외로움을 타던 어느 왕자를 위한 장난감으로 만들어졌다. 하지만 이제는 살육과 참사를 즐기는 마법 깃든 인형이다. 이전에는 친절한 마음씨를 지닌 광대였지만, 흑마법으로 타락하고 사랑하는 이를 잃은 상실감 때문에 오로지 불쌍한 인간들을 고문하는 것에서만 기쁨을 느끼게 되었다. 장난감과 단순한 속임수를 이용하여 상대를 농락하고 목숨을 빼앗은 다음, 유혈낭자한 '유희'의 결과에 만족하며 웃는다. 한밤중에 음산한 웃음소리가 들리는가? 그렇다면 이 악마의 어릿광대에게 다음 장난감으로 선택을 받은 것인지도 모른다.", "speech": '" 마술 하나 보여줄까?? "', "img": "shaco.jpg"},
+        "QWDR" : {"nick":"요정 마법사", "champion": "룰루", "explain": "요들 마법사 룰루는 친구인 요정 픽스와 함께 룬테라를 돌아다니며, 꿈결같은 환상과 상상 속에서나 존재할 법한 생명체를 만들어내는 것으로 유명하다. 룰루는 내키는 대로 현실을 빚어내고, 세상의 법칙을 비틀어 버린다. 룰루가 보기에 이 세상의 물리 법칙에 따르는 제약은 시시하고 따분하다. 룰루의 마법은 좋게 본다 해도 비정상적이고 나쁘게 보면 위험하다고까지 할 수도 있겠지만, 룰루의 신념은 확고하다. 사람들에게 마법 한 번씩 맛보여 주는 게 뭐 그리 큰일이냐는 것이다.", "speech": '" 만나서 반갑습니다! "', "img": "lulu.jpg",
+      "nick1":"마법 고양이", "champion1": "유미", "explain1": "유미는 밴들 시티 출신의 마법 고양이로 한때 요들 마법사 노라와 함께 살았다. 어느 날 노라가 알 수 없는 이유로 종적을 감추자 유미는 자아를 지닌 노라의 책 '관문의 서'의 수호자가 되었으며, 책 페이지 안에 존재하는 차원문을 타고 주인을 찾는 여정에 나섰다. 애정을 갈구하는 유미는 여정을 함께 떠날 친절한 동료들을 구하며, 빛나는 방패와 단호한 결의로 그들을 보호한다. 노라의 책은 유미가 눈앞에 놓인 임무에 집중하도록 하기 위해 애쓰지만, 유미는 낮잠이나 생선 같은 세상 속 즐거움에 이따금 한눈을 팔곤 한다. 물론 유미도 결국은 항상 주인을 찾는 일로 되돌아온다.", "speech1": '" 너랑 유미랑!<br>우리 함께 잘해보자고! "', "img1": "yumi.jpg"},
+        "QWDF" : {"nick":"뒤틀린 나무 정령", "champion": "마오카이", "explain": "거대한 나무 정령 마오카이는 분노에 휩싸여 그림자 군도의 초자연적인 언데드와 싸운다. 마법에 의한 대격변으로 고향이 파괴되었을 때 그는 자신의 나무 심장에 스며 있는 생명의 정수로 언데드의 상태는 모면했지만 형체가 뒤틀린 복수의 화신이 되었다. 한 때는 평화를 사랑하는 자연의 정령이었으나 이제 그는 그림자 군도를 뒤덮은 언데드를 몰아내고 아름답던 고향의 옛 모습을 되찾기 위해 맹렬하게 싸운다.", "speech": '" 군도의 빛을 되찾으리라! "', "img": "mao.jpg"},
+        "QSER" : {"nick":"프렐요드의 심장", "champion": "브라움", "explain": "축복받은 거대 이두박근과 그보다도 더 크고 호방한 마음을 지닌 브라움은 프렐요드 주민들이 사랑해 마지않는 영웅이다. 프로스텔드 북방에서 연회가 열리면 빠지지 않는 순서가 바로 브라움의 팔힘에 건배를 하는 것이다. 전설에 따르면 브라움은 단 하룻밤에 오크나무 숲 전체를 베어버렸고, 산 하나를 주먹으로 부수어 돌무더기로 만들어 버렸다고 한다. 마법이 깃든 동굴 문짝을 방패 삼아 들고, 근육만큼이나 커다란 콧수염 아래 사람 좋은 미소를 활짝 띤 브라움은 얼어붙은 북방을 배회한다. 도움이 필요한 이들의 진정한 친구가 되기 위해.", "speech": '" 가장! 듬직한 심장이 되어드리지! "', "img": "braum.jpg",
+      "nick1":"매혹하는 자", "champion1":"라칸", "explain1":"활달하고 변덕스러우면서도 거부하기 힘든 매혹을 발산하는 라칸은 악명 높은 바스타야 말썽꾼이자 로틀란 부족 역사상 가장 훌륭한 전장의 춤꾼이다. 아이오니아 고원 지대에 사는 사람들에게 라칸이라는 이름은 꽤 오래 전부터 시끌벅적한 축제, 흥이 넘치는 파티, 기존의 규칙을 거부하는 음악과 동일시되고 있다. 하지만 타고난 춤꾼이자 활력 넘치는 방랑자인 라칸이 저항 운동을 하는 자야와 동반자 관계가 되었으며, 자야의 대의에 헌신하고 있다는 사실을 아는 사람은 극히 드물다.", "speech1":'" 한번 신나게 춰볼까! "', "img1":"jaya.jpg"},
+        "QSEF" : {"nick":"핏빛 항구의 학살자", "champion": "파이크", "explain": "빌지워터 학살의 부두에서 유명한 작살잡이였던 파이크는 거대한 자울치의 뱃속에서 죽음을 맞이할 운명이었지만... 살아 돌아왔다. 이제, 그는 옛 고향의 음습한 골목과 뒷길을 소리 없이 누비며, 타인을 이용하여 부를 쌓은 자들에게 그가 얻은 초자연적인 힘으로 빠르고 잔혹한 최후를 선사한다. 괴물을 사냥한다고 자부했던 도시는 이제 괴물에게 사냥당하고 있다.", "speech": '" 모두 빠뜨려주마... "', "img": "pyke.jpg",
+      "nick1":"심해의 타이탄", "champion1":"노틸러스", "explain1":"빌지워터에는 처음으로 물에 잠긴 부두만큼이나 오래되었다는 쓸쓸한 전설이 하나 있다. 육중한 갑옷을 걸친 노틸러스라는 이름의 거인이 푸른 불꽃 제도 해안가의 검푸른 물을 배회한다는 이야기이다. 이제는 기억나지도 않을 복수심에 사로잡힌 그는 예고도 없이 거대한 닻을 휘둘러 가여운 자들을 구하고 탐욕스러운 자들을 죽음으로 인도한다. '빌지워터의 공물'이라는 절대 어겨선 안 될 약속을 잊은 자들을 바닷속으로 끌고 들어가며, 끌려들어 간 자는 누구도 그곳에서 살아 돌아올 수 없다고 한다.", "speech1":'" 물이 깊으니... 조심해... "', "img1": "nau.jpg"},
+        "QSDR" : {"nick1":"철의 여인", "champion1": "렐", "explain1": "검은 장미단의 악랄한 실험으로 탄생한 렐은 녹서스의 전복만을 위해 달리는 생체 무기이다. 금속을 조종하는 능력 때문에 그녀는 고통과 공포로 점철된 어린 시절을 보내며 끔찍한 전투 훈련을 받아야 했다. 견디다 못한 나머지 자신을 구속한 자들을 죽이고 도망쳤고, 결국 범죄자로 낙인찍혔다. 자유의 몸이 된 렐은 이제 자신과 같은 고통을 겪던 아이들을 구출하며 녹서스 병사들을 보이는 대로 처치한다. 그리고 과거의 스승들에게는 무자비한 죽음을 안겨 주고, 약자들은 보호한다.", "speech1": '" 아무도 받아들이지 않겠어.<br>누구도 빠져나갈 수 없을 테니까! "', "img1": "rell.jpg",
+      "nick":"미노타우로스", "champion":"알리스타", "explain":"비할 데 없이 강력한 전사라는 평판이 자자한 알리스타는 녹서스 제국에게 부족 전체가 몰살당한 이래 그 복수를 꿈꾸고 있다. 노예로 잡힌 후 참혹한 전투를 거듭해야 하는 검투사 신세가 되었으나, 그 누구도 꺾을 수 없는 의지가 있어 마음 깊은 곳까지 야수로 변하지는 않았다. 알리스타는 노예라는 구속에서 벗어나 자유의 몸이 된 후에도 탄압당하고 기댈 곳 없는 자들을 위해 싸우고 있다. 알리스타의 분노는 그의 뿔이나 발굽, 주먹 못지 않게 적들이 두려워하는 무기이기도 하다.", "speech":'" 누구도 날 막지 못해! "', "img":"ali.jpg" },
+        "QSDF" : {"nick":"불굴의 창", "champion": "판테온", "explain": "본의 아니게 전쟁의 성위에 잠식된 아트레우스는 자신에게 깃든 천상의 힘을 파괴하고 하늘의 별을 사라지게 할 정도로 강력한 일격에도 굴복하지 않고 살아남았다. 그리고 결국 필멸의 운명을 인정하고, 그에 따르는 힘과 불굴의 정신을 받아들였다. 이제 아트레우스는 신성에 저항하는 판테온으로 다시 태어나, 꺾이지 않는 의지와 성위의 무기로 무장한 채 전장을 누빈다.", "speech": '" 전쟁에서 우린, 다시 태어난다! "', "img": "pan.jpg",
+          "nick1":"위대한 석상", "champion1": "갈리오", "explain1": "아스라한 빛의 도시 데마시아의 성문 밖, 거대한 석상 갈리오가 경계의 눈을 늦추지 않고 서 있다. 마법사의 공격으로부터 데마시아를 수호하기 위해 만들어진 갈리오는 강력한 마법의 힘이 그를 깨울 때까지 수십 년, 때로는 수백 년 동안 한자리에 미동도 없이 서있다. 일단 깨어나면 전투의 아찔한 스릴과 데마시아인들을 구한다는 자부심을 음미하며 1분 1초도 허투루 쓰는 법이 없다. 그러나 그가 쟁취한 승리의 향기는 결코 달콤하지만은 않다. 아이러니하게도 그가 물리친 마법의 힘이 그에게 생명을 준 원천이기에 전쟁을 승리로 장식한 후에는 다시 깊은 잠으로 빠져든다.", "speech1": '" 힘을 발휘할 시간이군! "', "img1": "gal.jpg"},
+        "AWER" : {"nick":"깨우친 자", "champion": "카르마", "explain": "아이오니아의 영적인 전통을 카르마보다 잘 나타내는 필멸자가 있을까. 카르마는 지난 시간 동안 축적된 기억을 새로운 생명으로 온존하며 수없이 부활한 고대 영혼의 살아있는 현신으로, 극소수만이 깨우칠 수 있는 힘을 손에 넣었다. 최근 위기가 닥쳤을 때 최선을 다해 자신을 따르는 이들을 이끈 카르마는 자신과 자신이 그토록 아끼는 조국 모두가 상당한 대가를 치러야만 평화와 조화가 찾아오리라는 것을 알고 있다.", "speech": '" 항상 정신을 집중하세요! "', "img": "karma.jpg",
+      "nick1":"광명의 소녀", "champion1": "럭스", "explain1": "럭산나 크라운가드는 데마시아 인으로, 마법 능력을 가진 자를 공포와 의심을 담은 편협한 시선으로 보는 환경에서 태어났다. 고귀한 가문의 딸이지만 빛을 자유자재로 다루는 마법력을 타고났기에 이 능력이 발각되면 추방당할 것이라는 두려움을 안고 어린 시절을 보냈다. 자신의 능력을 감추는 것만이 가문의 명예를 지키는 방법이라고 여겼지만, 낙천적이고 유연한 성격 덕분에 차츰 자신만의 재능을 인정하고 받아들였고, 이제는 조국을 위해 마법을 은밀하게 사용하고 있다.", "speech1": '" 어디 한번 길을 밝혀보죠! "', "img1": "lux.jpg"},
+        "AWEF" : {"nick":"구원자", "champion": "세나", "explain": "어린 시절부터 초자연적인 검은 안개에 쫓기는 저주를 받은 세나는 빛의 감시자들이라는 신성한 조직에 합류하여 검은 안개에 맹렬히 저항하지만, 잔혹한 악령 쓰레쉬의 손에 쓰러지고 랜턴에 영혼을 사로잡히게 된다. 그러나 희망을 잃지 않은 그녀는 랜턴 안에서 안개의 힘을 활용하는 법을 배워 완전히 새로운 모습으로 다시 태어난다. 이제 빛과 어둠을 모두 다스릴 수 있게 된 세나는 자신의 유물포로 검은 안개에 갇힌 영혼들을 구하고 검은 안개를 자멸케 하고자 한다.", "speech": '" 검은 안개를 홀로 상대하지 마 "', "img": "senna.jpg"},
+        "AWDR" : {"nick":"노래하는 별", "champion": "세라핀", "explain": "자운 출신의 부모를 둔 세라핀은 필트오버에서 태어나 다른 사람의 영혼의 소리를 들을 수 있다. 세상이 그녀에게 노래하고 그녀 또한 답가를 불렀다. 어린 시절에는 이 소리가 그녀를 억눌렀지만 이제 그녀는 영감을 위해 소리를 이끌어내고 혼돈을 협화음으로 바꿀 수 있게 되었다. 세라핀은 두 도시를 위해 공연하며 시민들에게 그들은 혼자가 아니고 함께일 때 더 강하며, 그들의 잠재력은 무한하다는 것을 일깨워준다.", "speech": '" 세상을 바꿔보는거야! "', "img": "sera.jpg",
+      "nick1":"별의 아이", "champion1": "소라카", "explain1": "타곤 산 너머 천상계의 방랑자 소라카는 필멸자들이 스스로의 폭력성 때문에 고통받는 것을 치유하기 위해 자신의 불멸을 포기했다. 소라카는 만나는 모든 이에게 동정심과 자비의 마음을 심어주려고 노력하며, 심지어 자신에게 해를 입히려 획책하는 자들마저 치유한다. 이 세계의 갈등과 혼란을 모두 지켜보았음에도, 소라카는 아직 룬테라 인들이 잠재력을 모두 끌어낸 것은 아니라고 믿고 있다.", "speech1": '" 내 숨이 붙어있는 한<br>고통받게 두진 않아요 "', "img1": "soraka.jpg"},
+        "AWDF" : {"nick":"시간의 수호자", "champion": "질리언", "explain": "한때 이케시아의 강력한 마법사였던 질리언은 자신의 고국이 공허에 파괴되는 것을 목격한 후 시간의 흐름에 사로잡히게 되었다. 질리언은 처참한 상실감에 슬퍼할 틈도 없이, 미래의 모든 경우의 수를 예측하기 위해 시간 마법의 주문을 외웠다. 이제 사실상 불멸의 몸이 된 질리언은 과거, 현재, 미래를 표류하며 주변 시간의 흐름을 구부리거나 왜곡하여 시간을 되감고 있다. 이케시아를 멸망하기 전으로 돌려 놓을 시점을 찾아 모든 시간대에서 망연히 부유하는 것이다.", "speech": '" 그리할 줄 알고 있었소! "', "img": "zill.jpg"},
+        "ASER" : {"nick":"타락한 자", "champion": "모르가나", "explain": "천상의 힘과 필멸의 육신 사이에서 고뇌하던 모르가나는 자신의 날개를 묶고 다시 인간의 삶을 살면서 부정하고 타락한 자들을 벌한다. 그녀는 데마시아의 부당한 법과 전통을 거부하며, 왕국의 그림자 속에서 암흑 불꽃으로 만든 방패와 사슬로 진실을 억압하려는 자들에 맞서 싸운다. 추방당하고 버림받은 자라고 해도 언젠가 다시 돌아올 수 있다고 믿기 때문이다.", "speech": '" 날개를 묶었다고<br>의지까지 꺽인건 아니야 "', "img": "mor.jpg"},
+        "ASEF" : {"nick":"여명의 빛", "champion": "레오나", "explain": "솔라리 성전사 레오나는 천공의 검과 여명의 방패로 타곤 산을 수호한다. 레오나의 몸은 태양의 불길로 가득하며, 피부는 별의 광채로 빛나고, 눈동자는 천체들의 기운으로 불타오른다. 황금 갑주와 어마어마한 고대의 지식으로 무장한 레오나는 어떤 이들에게는 깨우침을, 어떤 이들에게는 죽음을 선사한다.", "speech": '" 새벽이 밝았습니다!! "', "img": "leona.jpg",
+      "nick1":"우두머리", "champion1": "세트", "explain1": "점점 세력을 더해 가는 아이오니아 범죄 세계의 우두머리 세트는 녹서스와의 전쟁이 끝남과 동시에 두각을 드러내기 시작했다. 나보리 투기장의 신인 투사로 등장한 그는 무지막지한 힘과 상상을 초월하는 맷집으로 금세 유명인사가 되었고, 동네 싸움꾼에서 한때 그가 싸웠던 투기장을 지배하는 정상의 자리까지 올라섰다.", "speech1": '" 난, 최강이다..! "', "img1": "sett.jpg"},
+        "ASDR" : {"nick":"지옥의 간수", "champion": "쓰레쉬", "explain": "가학적이고 교활한 그림자 군도의 악령인 쓰레쉬는 이 세계에 고통을 전파하겠다는 야심을 품고 잠시도 쉬지 않는다. 원래는 신비로운 비밀이 가득한 지하 창고의 관리인이었으나, 삶이나 죽음보다 더 거대한 힘에 의해 타락했고 이제는 기발한 고문 방법을 생각해 내어 사람들을 괴롭히며, 오랫동안 견디기 힘든 고통을 가하여 서서히 망가뜨리는 일에 심취하고 있다. 쓰레쉬의 마수에 붙잡힌 자는 죽음으로도 그 손아귀를 벗어날 수 없다. 쓰레쉬가 랜턴에 영혼을 가두고는 영원히 끝나지 않는 고통을 가하기 때문이다.", "speech": '" 어떤 고통을 선사해 줄까? "', "img": "th.jpg",
+      "nick1":"거대 증기 골렘", "champion1":"블리츠크랭크", "explain1":"블리츠크랭크는 지하도시 자운의 기술이 만들어낸 거대한 기계로 사실상 파괴불가능에 가깝다. 원래는 자운을 뒤덮은 유독 폐기물을 처리하기 위해 만들어진 골렘이었으나, 연약하기 짝이 없는 자운 시민들을 지키기 위해서는 폐기물을 치우는 것만으로는 모자란다고 판단하여 스스로 형체를 변형시키기에 이르렀다. 블리츠크랭크는 골렘다운 힘과 내구성을 사심 없이 활용하여 사람들을 보호하고, 말썽꾼이 눈에 띄면 강철 주먹을 내지르거나 에너지를 분출하여 진압한다.", "speech1":'" 시스템 가동 - 준비 완료. "', "img1":"blit.jpg"},
+        "ASDF" : {"nick":"황혼의 눈", "champion": "쉔", "explain": "쉔은 '킨코우'라고 하는 아이오니아 비밀결사단의 수장이자, '황혼의 눈'이다. 감정, 편견, 아집에서 벗어나는 자유로운 정신을 유지하려 노력하며, 영적 세계와 현실 세계 사이에서 감정에 흔들리지 않는 공명정대함을 실현하기 위해 그 누구도 걷지 않았던 길을 걷는다. 두 세계 사이의 균형을 맞추는 임무를 맡았기에, 그 균형을 위협하려는 자에게 강철검을 휘두르고 신비한 기운을 사용한다.", "speech": '" 훌륭한 판단의 표본이로군. "', "img": "shen.jpg",
+        "nick1":"영겁의 수호자", "champion1": "바드", "explain1": "별 너머에서 온 여행자 바드는 뜻밖의 발견과 예기치 않은 행운을 수호하며, 삶이 무심한 혼돈을 견딜 수 있도록 우주의 균형을 유지하기 위해 싸운다. 룬테라 인들은 바드가 신비하고 초월자적인 존재라는 내용의 노래를 곧잘 흥얼거리지만, 이 우주의 방랑자가 강력한 마법의 힘이 깃든 유물에 집착한다는 사실은 모든 룬테라 인이 동의하는 바다. 하지만 유익한 정령들이 내는 환희 어린 합창에 둘러싸인 바드가 악의를 지니고 있는 것은 아닐 터이다. 바드는 필멸의 존재보다 더 큰 선을 지키고자 할 뿐이다... 다만 그 방식이 기이할 뿐.", "speech1": '" ♪♩ ♪♩ ♬ "', "img1": "bard.jpg"},
+      }
+
+        function start() {
+          $(".start").hide();
+          $(".question").show();
+          next();
+        }
+      $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+      });
+      $("#B").click(function(){
+        next();
+      });
+      function next(){
+        if (num == 5){
+          $(".question").hide();
+          var cha = "";
+          ($("#QA").val() < 1) ? cha += "A" : cha += "Q";
+          ($("#WS").val() < 1) ? cha += "S" : cha += "W";
+          ($("#ED").val() < 1) ? cha += "D" : cha += "E";
+          ($("#RF").val() < 1) ? cha += "F" : cha += "R";
+
+          $("#img").attr("src", result[cha]["img"]);
+          $("#nick").html(result[cha]["nick"]);
+          $("#champion").html(result[cha]["champion"]);
+          $("#speech").html(result[cha]["speech"]);
+          $("#explain").html(result[cha]["explain"]);
+          $("#img1").attr("src", result[cha]["img1"]);
+          $("#nick1").html(result[cha]["nick1"]);
+          $("#champion1").html(result[cha]["champion1"]);
+          $("#speech1").html(result[cha]["speech1"]);
+          $("#explain1").html(result[cha]["explain1"]);
+
+          $(".result").show();
+
+         } else {
+          $(".progress-bar").attr('style', 'width: calc(100/4*'+num+'%)');
+          $("#title").html(q[num]["title"]);
+          $("#type").val(q[num]["type"]);
+          $("#A").html(q[num]["A"]);
+          $("#B").html(q[num]["B"]);
+          num++;
+        }
+      }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6099361ac81b5688"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정글 챔피언 추천</title>
+    <meta name="description" content=" 나에게 가장 어울리는 챔피언을 추천해드립니다. ">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="롤 챔피언 추천 테스트">
+    <meta property="og:description" content=" 나에게 가장 어울리는 챔피언을 추천해드립니다. ">
+    <meta property="og:image" content="https://loltest.netlify.app//poro.jpg">
+    <meta property="og:url" content="https://loltest.netlify.app/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <article class="start">
+      <h1 class="mt-5">당신에게 어울리는</h1>
+      <h2>정글 챔피언은?!</h2>
+      <button type="button" class="btn btn-outline-warning mt-5 " onclick="start();">테스트 시작하기</button><br><br>
+      <button type="button" class="btn btn-outline-warning " onclick="location.href='index.html'">다른 라인 추천 받기</button>
+      <article class="kakao1 mt-5">
+        <ins class="kakao_ad_area" style="display:none;"
+         data-ad-unit    = "DAN-mVH6QBp9jVOVhyJZ"
+         data-ad-width   = "300"
+         data-ad-height  = "250"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+    </article>
+
+    <article class="question ltop border border-warning">
+      <div class="progress mt-5">
+        <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: calc(100/5*1%)"></div>
+      </div>
+      <h2 id="title" class="mt-5">문제</h2>
+      <input id="type" type="hidden" value="QA">
+      <button id="A" type="button" class="btn btn-outline-warning mt-5 ">1</button>
+      <button id="B" type="button" class="btn btn-outline-warning mt-5 ">2</button>
+      <article class="kakao mt-5">
+        <ins class="kakao_ad_area mb-5" style="display:none;"
+           data-ad-unit    = "DAN-4OgJeKWpFcJt4Zjg"
+           data-ad-width   = "320"
+           data-ad-height  = "100"></ins>
+         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+      </article>
+
+    <article class="result lay">
+      <h1 id="line" class="mt-5 border border-warning rounded border border-1">추천 챔피언</h1>
+      <h1 id="nick" class="mt-5">닉네임</h1>
+      <h2 id="champion">챔피언</h2>
+      <img id="img" src="" class="border border-warning rounded border border-1" alt="챔피언 이미지">
+      <h3 id="speech"class="mt-5">대사</h3>
+      <h5 id="explain"class="mt-5 border border-warning rounded border border-1">설명</h5>
+      <article class="kakao mt-5">
+        <ins class="kakao_ad_area" style="display:none;"
+           data-ad-unit    = "DAN-4OgJeKWpFcJt4Zjg"
+           data-ad-width   = "320"
+           data-ad-height  = "100"></ins>
+         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      </article>
+      <h1 id="nick1" class="mt-5"></h1>
+      <h2 id="champion1"></h2>
+      <img id="img1" src="poro.jpg" class="border border-warning rounded border border-1" alt="챔피언 이미지2">
+      <h3 id="speech1"class="mt-5"></h3>
+      <h5 id="explain1"class="mt-5 border border-warning rounded border border-1">이 챔피언과 함께 티어를 올려보세요!</h5>
+
+      <button type="button" class="btn btn-outline-warning mt-5" onclick="location.href='jg.html'">다시하기</button>
+      <h6 class="mt-5">친구들과 공유하고 결과를 비교해보세요!</h6>
+<!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox_97d6 share"></div>
+
+  <h6 class="mt-5">이미지 출처: 리그 오브 레전드 공식 홈페이지</h6>
+    </article>
+    <input type="hidden" id="QA" value="0">
+    <input type="hidden" id="WS" value="0">
+    <input type="hidden" id="ED" value="0">
+    <input type="hidden" id="RF" value="0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script>
+      var num = 1;
+      var q= {
+        1: {"title": "나의 게임 스타일은?", "type": "QA", "A": "이 게임의 주인공은 바로 나!", "B": "승리를 위해 팀원에게 헌신한다."},
+        2: {"title": "내가 중요하게 생각하는 스킬은?", "type": "WS", "A": "팀원과의 스킬 연계를 위한 cc기", "B": "도주와 추노를 위한 기동성 스킬"},
+        3: {"title": "내가 선호하는 궁극기는?", "type": "ED", "A": "순간적으로 폭딜을 넣을 수 있는 궁극기", "B": "게임의 변수를 만들어주는 궁극기"},
+        4: {"title": "다음중 더 뛰어는 능력은?", "type": "RF", "A": "극한의 피지컬!", "B": "적절한 스킬분배의 뇌지컬!"}
+      }
+      var result = {
+        "QWER" : {"nick":"고통스런 포옹", "champion": "이블린", "explain": "룬테라의 어두운 경계선 안에서, 악마 이블린은 다음 먹잇감을 찾고 있다. 먼저 관능적인 인간 여성의 얼굴로 사냥감을 유혹한다. 희생자가 그 매력에 넘어오면, 이블린은 악마의 참모습을 드러낸다. 이블린은 희생자에게 말로 형언할 수 없는 고통을 안기고, 자신은 그 고통에 희열을 느낀다. 이블린이라는 악마에게는 이것이 한바탕 즐기는 유희일 뿐이지만, 룬테라 주민에게는 엇나간 욕망을 발산했다가는 그 대가로 끔찍한 종말을 맞게 되리라는 교훈을 되새겨주는 무시무시한 이야기이다.", "speech": '" 날 원하잖아, 그렇지? "', "img": "evel.jpg",
+      "nick1":"영원한 악몽", "champion1": "녹턴", "speech1": '" 어둠을 맞이하라..! "', "explain1":'"언제부터인가 자의식이 있는 존재라면 반드시 꾸는 악몽이 있었다. 그리고 그 악몽들이 모여 사악한 기운을 끌어들였고, 그 속에서 태곳적 힘을 지닌 순수한 악 그 자체인 녹턴이 생겨났다. 녹턴은 혼돈을 암흑의 액체로 표현한 듯한 형상으로, 얼굴은 없으나 차디찬 눈을 지녔으며 흉흉해 보이는 칼날로 무장했다. 영혼계에서 탈출하여 생명이 깨어 있는 세계로 내려온 녹턴은 진정한 암흑에서나 피어날 법한 공포를 먹이로 삼는다. "', "img1": "nocturne.jpg" },
+        "QWEF" : {"nick":"무법자", "champion": "그레이브즈", "explain": "말콤 그레이브즈는 명성이 자자한 용병, 도박사, 도적으로, 그가 한 번이라도 발을 들였던 모든 도시와 제국에서 수배령이 떨어져 있을 정도다. 그레이브즈는 성미가 불 같지만, 범죄의 명예에 엄격한 면이 있어 자신의 이중 총열 산탄총 '운명'으로 마무리를 하는 경우가 잦다. 최근에는 트위스티드 페이트와 함께 바람 잘 날 없던 파트너 관계를 다시 맺고, 범죄의 냄새가 나는 빌지워터의 그늘진 곳에서 벌어지는 소동을 다시 한 번 주름잡고 있다.", "speech": '" 내가 돌아왔다! "', "img": "grave.jpg"},
+        "QWDR" : {"nick":"시간을 달리는 소년", "champion": "에코", "explain": "자운 뒷골목 출신의 천재 소년 에코는 언제든 자신에게 유리하게 시간을 조작할 수 있다. 그는 직접 발명한 Z 드라이브를 이용해 다양한 시공간의 무한한 가능성을 탐험하며 완벽한 순간을 포착한다. 누구보다도 자유로운 영혼을 가졌지만 소중한 친구들을 구하기 위해서라면 어떤 위험도 무릅쓴다. 에코를 잘 모르는 사람들은 그가 어떻게 한 번의 시행착오도 없이 매번 완벽하게 불가능한 일을 해내는지 놀라움을 금치 못한다.", "speech": '" 시간이 얼마나 있는지는 상관없어.<br>어떻게 쓰느냐가 중요하지! "', "img": "echo.jpg",
+      "nick1":"죽음을 노래하는 자", "champion1": "카서스", "explain1": "망각을 부르는 자 카서스는 섬뜩한 노랫소리를 전주곡 삼아 악몽처럼 등장하는 언데드이다. 산 자는 영원히 죽지 않는 언데드를 두려워하나, 그는 언데드를 삶과 죽음의 완벽한 결합으로 오직 아름답고 순수하다 여긴다. 카서스는 언데드로서 존재하는 기쁨을 온 세계에 전하기 위해 그림자 군도로부터 출몰한다.", "speech1": '" 고통,희열,그리고 평화...<br>죽음은 언제나 아름답다. "', "img1": "kar.jpg"},
+        "QWDF" : {"nick":"거미 여왕", "champion": "엘리스", "explain": "엘리스는 녹서스 불멸의 요새 깊숙한 곳에 있는 저택에서 빛을 차단하고 은둔해 사는 치명적인 포식자다. 필멸자 시절 그녀는 명문가의 안주인이였지만 끔찍한 반신에 물린 후 매혹적이면서도 무자비한 거미와 같은 존재가 되어 먹잇감을 거미줄로 끌어들였다. 영원한 젊음을 유지하기 위해 엘리스는 거부하기 힘든 유혹을 펼치며 무고한 이들을 사냥한다.", "speech": '" 거미줄에선 거미만 안전하지.. "', "img": "elise.jpg",
+      "nick1":"바위술사", "champion1": "탈리야", "explain1": "슈리마의 떠돌이 마법사 탈리야는 10대의 호기심과 어른으로서의 책임 사이에서 괴로워한다. 탈리야는 자신 안에서 커져 가는 힘의 본질을 깨닫기 위해 발로란 전역을 누빈 끝에, 최근에는 자신의 부족을 보호하기 위해 돌아왔다. 탈리야의 여린 마음을 약점으로 착각한 사람들은 호되게 대가를 치렀다. 탈리야의 천진난만한 모습 뒤에는 산도 움직이는 불굴의 의지와 대지도 흔드는 강인한 정신이 있기 때문이다.", "speech1": '" 마법의 베틀로, 바위를 엮어내리라!  "', "img1": "tali.jpg"},
+        "QSER" : {"nick":"공허의 약탈자", "champion": "카직스", "explain": "'공허는 성장하고, 공허는 적응한다.' 공허태생 생명체는 많지만, 이 진리를 카직스보다 더 명백히 입증하는 존재는 없다. 카직스가 공포스러운 것은 진화를 거듭하기 때문이다. 생존을 위해 사냥을 하고, 사냥감을 집어삼킬 때마다 강해지고, 더 강한 상대를 찾아 또다시 사냥에 나선다. 게다가 진화를 할수록 먹이를 낚아채는 사냥 기술은 더 새로워지고 효율도 높아진다. 공허에서 갓 넘어왔을 때에는 아무 생각 없는 야수에 불과했으나, 이제는 그 형체만큼이나 지능도 완전히 변모했다. 지금의 카직스는 세심한 계획을 세워 사냥을 하고, 자신의 모습을 본 희생양이 본능적으로 일으키는 공포심을 활용하기도 한다.", "speech": '" 변화란 좋은 거야! "', "img": "kha.jpg",
+      "nick1":"그림자 사신", "champion1": "케인", "explain1": "치명적인 그림자 마법을 그 누구보다도 자유자재로 구사하는 자, 시이다 케인이 싸우는 이유는 자신에게 주어진 진정한 운명을 실현하기 위해서다. 장차 그림자단을 이끌고 아이오니아가 패권을 장악하는 새로운 시대를 열 것이라는 운명. 케인은 자의식이 있는 다르킨 무기 라아스트를 들고 전장에 나선다. 다르킨 무기는 그것을 휘두르는 자의 몸과 정신을 서서히 타락시킨다는 사실은 아랑곳하지 않는 것이다. 다르킨 무기에 손을 댄 이상 예상할 수 있는 결과는 단 두 가지다. 케인이 무기의 의식을 굴복시켜 자신의 의지를 따르게 하거나, 아니면 저 악의에 가득 찬 낫이 케인을 완전히 집어삼키고 룬테라 전역을 멸망의 길로 몰아넣거나.", "speech1": '" 네 능력을 입증해 볼 테냐? "', "img1": "kayn.jpg"},
+        "QSEF" : {"nick":"전쟁의 전조", "champion": "헤카림", "explain": "헤카림은 말과 인간이 한 몸인 반인반수 유령으로, 산 자들의 영혼을 끝없이 추적하는 저주를 받았다. 원래는 자존심 강한 기사로 자신의 기사단을 이끌었으나, 축복의 빛 군도에 그림자가 드리울 때 대몰락의 파괴 에너지에 휩쓸려 최후를 맞았다. 그 이후 헤카림과 기사단은 타고 있던 말과 한 몸이 되어, 검은 안개가 룬테라에 깔릴 때면 무자비한 돌격을 일삼는다. 이제 그에게 남은 쾌락이란 적을 학살하고 철갑을 두른 말발굽 아래 그 시체를 깔아뭉개는 것뿐이다.", "speech": '" 그림자 군도의 위력을 똑똑히 봐라! "', "img": "heca.jpg",
+      "nick1":"공허의 복병", "champion1": "렉사이", "explain1": "최상위 포식자 렉사이는 무자비한 공허 태생 생명체로, 땅굴을 파고 들어가 있다가 방심한 먹잇감을 덮쳐 게걸스럽게 집어삼킨다. 렉사이의 그칠 줄 모르는 식탐 때문에 위대한 슈리마 제국 전체가 초토화되었을 정도다. 사막을 오가는 상인이나 여행자들은 아무리 철저하게 무장을 했더라도 렉사이의 영토를 피하려고 일부러 멀고 먼 길을 돌아가곤 한다. 렉사이가 지평선에 보이면, 지하에서 기다리고 있는 것은 죽음 뿐이라는 것을 모르는 사람은 없다.", "speech1": '" ...크르릉!! "', "img1": "rek.jpg"},
+        "QSDR" : {"nick":"야성의 사냥꾼", "champion": "니달리", "explain": "깊은 정글에서 자라난 니달리는 자신의 형태를 흉포한 쿠거로 자유자재로 변화시킬 수 있는 추적의 달인이다. 완전한 여인도, 완전한 야수도 아닌 니달리는 신중하게 배치한 덫과 재빠른 창 투척으로 모든 침입자들로부터 자신의 영역을 맹렬하게 지켜낸다. 니달리는 사냥감을 움직이지 못하게 공격한 후 쿠거 형태로 변해 덮친다. 니달리에게서 운 좋게 살아남은 몇 사람은 야생에 사는 여자가 있다는 이야기를 퍼뜨렸다. 본능이 극도로 예리하고, 발톱은 그보다도 더 예리하다고...", "speech": '" 야생을 두려워하게 만들어주지! "', "img": "nidal.jpg",
+      "nick1":"영겁의 사냥꾼", "champion1": "킨드레드", "explain1": "킨드레드는 따로지만 언제나 함께인 죽음의 양면을 지닌 존재다. 운명을 받아들인 자에게는 양의 화살로 빠른 죽음을 선사하고, 운명을 거부하고 도망치는 자에게는 늑대가 달려드는 잔혹한 최후를 안겨준다. 룬테라에서는 지역마다 킨드레드의 본성에 다른 의미를 부여했지만, 필멸의 존재라면 결국 진정한 죽음을 선택해야만 한다는 점은 같았다.", "speech1": '" 함께가 아니면. 아무것도 아니다! "', "img1": "kind.jpg"},
+        "QSDF" : {"nick":"악마 어릿광대", "champion": "샤코", "explain": "샤코는 오래 전, 외로움을 타던 어느 왕자를 위한 장난감으로 만들어졌다. 하지만 이제는 살육과 참사를 즐기는 마법 깃든 인형이다. 이전에는 친절한 마음씨를 지닌 광대였지만, 흑마법으로 타락하고 사랑하는 이를 잃은 상실감 때문에 오로지 불쌍한 인간들을 고문하는 것에서만 기쁨을 느끼게 되었다. 장난감과 단순한 속임수를 이용하여 상대를 농락하고 목숨을 빼앗은 다음, 유혈낭자한 '유희'의 결과에 만족하며 웃는다. 한밤중에 음산한 웃음소리가 들리는가? 그렇다면 이 악마의 어릿광대에게 다음 장난감으로 선택을 받은 것인지도 모른다.", "speech": '" 마술 하나 보여줄까?? "', "img": "shaco.jpg"},
+        "AWER" : {"nick":"눈 먼 수도승", "champion": "리신", "explain": "리 신은 아이오니아에 전해 내려오는 고대 무술에 통달했다. 지조 높고 고결한 전사로, 싸워야 할 때에는 용의 혼의 정수를 끌어낸다. 오래 전에 시각을 잃었으나, 고향 땅의 신성한 균형을 해치려 드는 자를 막아내는 데 일생을 바치겠다는 신념은 흔들림이 없다. 명상에 잠긴 듯 고요한 태도를 얕보고 함부로 덤벼드는 적은 리 신의 불꽃 같은 주먹과 초인적 위력의 돌려차기에 속수무책으로 당한다.", "speech": '" 당신의 뜻대로, 싸우겠소. "', "img": "lee.jpg",
+          "nick1":"몰락한 왕", "champion1": "비에고 ", "explain1": "비에고는 오래전 잊힌 왕국의 지배자였다. 천년도 전에, 그는 아내 이졸데를 죽음에서 되찾고자 시도한 끝에 현재 대몰락으로 불리는 마법 재해를 일으켰다. 그 안에서 죽음을 맞은 비에고는 강력한 망령이 되었으나, 죽은 지 수백 년은 지난 왕비를 향한 집착에 여전히 고통받았다. 이제 비에고는 몰락한 왕으로 군림하여 죽음의 해로윙을 지배한다. 이졸데를 치유할 가망이 있는 것이라면 무엇이든 찾아 룬테라를 뒤지며, 잔혹한 심장의 상처에서 끝없이 쏟아지는 검은 안개로 그 앞길을 가로막는 이를 남김없이 처단한다.", "speech1": '" 사랑 뒤엔 몰락 뿐.. "', "img1": "viego.jpg"},
+        "AWEF" : {"nick1":"중무장 아르마딜로", "champion1":"람머스", "explain1":"알 수 없는 신비의 존재 람머스. 누군가에게는 숭배의 대상이고, 또 누군가에게는 경외의 대상인 우상과도 같은 인물. 더러는 우리와 똑같은 인간으로 여겨지는 경우도 있다. 하지만 한 가지 분명한 것은 그 누구도 람머스의 정체를 제대로 알지 못한다는 것. 베일에 가려진 수수께끼의 존재라는 사실이다. 뾰족한 못이 박힌 갑옷을 입고 다니는 그를 두고 사람들은 여려가지 추측을 내놓는다. 반신반인의 존재라느니, 신성한 사제라느니, 마술에 걸린 야수일 뿐이라는 얘기까지 무척이나 다양하다. 그러나 진실이 무엇이든, 사막을 배회하며 뭐든지 제 생각대로 해버리고 마는 람머스의 의지를 꺾을 자는 아무도 없다.", "speech1":'" 그래 "', "img1":"ram.jpg",
+      "nick":"소년과 설인", "champion": "누누와 윌럼프", "explain": "아주 오랜 옛날, 무시무시한 괴물을 물리쳐 영웅이 되고 싶은 소년이 있었다. 하지만 소년이 발견한 것은 마법을 부리는, 단지 친구가 필요했던 외로운 설인이었다. 고대의 힘과 눈싸움으로 하나가 된 소년 누누와 설인 윌럼프는 프렐요드 곳곳을 누비며 상상 속의 모험을 떠난다. 실종된 누누의 어머니를 찾아 나선 누누와 윌럼프. 이들이 누누의 어머니를 구한다면 영웅이 될 수 있을지도...", "speech": '" 모험은 역시<br> 친구랑 같이 해야 신나는 법! "', "img": "nunu.jpg"},
+        "AWDR" : {"nick":"망치의 수호자", "champion": "뽀삐", "explain": "룬테라에는 용맹한 챔피언이 넘쳐나지만 뽀삐만큼 끈기 넘치는 이는 찾아보기 힘들다. 제 키의 두 배는 되는 망치 오를론을 들고 다니는 뽀삐는 오랫동안 망치의 정당한 주인이자 전설의 주인공인 데마시아의 영웅을 찾아 비밀스럽게 헤매고 있다. 그 때까지 뽀삐는 충실히 전투로 돌격해 망치를 크게 휘둘러 왕국의 적을 모두 날려 버린다.", "speech": '" 영웅이라뇨, 전 그저 망치를 든 요들일 뿐이에요! "', "img": "poppy.jpg",
+      "nick1":"데마시아의 귀감", "champion1":"자르반 4세", "explain1":"라이트실드 왕조의 자손인 자르반 왕자는 데마시아의 왕좌를 물려받을 후계자이다. 데마시아의 덕목을 대표하는 귀감으로 자라난 자르반 왕자는 자신의 어깨에 짊어진 큰 기대와 전선에서 싸우고 싶다는 개인적 욕망 사이에서 갈등해야 했다. 자르반 왕자는 가공할 만한 용기와 자신을 돌보지 않는 투지로 병사들을 고무시키며, 데마시아의 기치를 높이 들고 자신의 백성을 이끄는 미래의 지도자로서 진정한 힘을 뿜어낸다.", "speech1":'" 내 의지로, 여기서 끝을 보겠노라! "', "img1":"jar.jpg"},
+        "AWDF" : {"nick":"비밀 병기", "champion": "자크", "explain": "자크는 화학공학 지층을 따라 흐른 독성물질이 자운의 지하동굴 깊은 곳에 위치한 웅덩이에 모여 만들어진 생명체이다. 이처럼 변변치 못한 태생에도 불구하고 자크는 원시적인 진흙의 상태에서 지성을 갖춘 존재로 성장했다. 그는 자운의 배관 속에 살면서 도움이 필요한 이들을 돕거나 자운의 망가진 기반시설을 재건하기 위해 이따금 모습을 드러낸다.", "speech": '" 딱 봐도 잘 싸우게 생기지 않았어? "', "img": "zac.jpg",
+      "nick1":"혹한의 분노", "champion1": "세주아니", "explain1": "세주아니는 프렐요드에서 가장 공포스러운 부족 중 하나로 꼽히는 겨울 발톱 부족의 잔혹하고 무자비한 냉기의 화신이자 전쟁의 어머니이다. 세주아니의 부족은 생존을 위해 자연과 끊임 없이 절박한 싸움을 했고, 혹독한 겨울에서 살아남기 위해 녹서스, 데마시아, 아바로사를 침공해야 했다. 세주아니는 가장 위험한 공격의 선봉에 서서 멧돼지 브리슬의 안장에 타고 얼음 정수의 철퇴를 휘둘러 적을 얼리고 깨뜨린다.", "speech1": '" 네가 가진 힘,<br>믿을 건 오직 그뿐이야! "', "img1": "sae.jpg"},
+        "ASER" : {"nick":"술취한 난동꾼", "champion": "그라가스", "explain": "그라가스는 몸집이 크고 소란스러워서 한 번 보면 잊기 힘든 쾌활한 주조가로, 완벽한 술을 만들기 위한 여정을 떠나게 되었다. 그라가스가 어디서 왔는지는 아무도 모르지만, 프렐요드의 때묻지 않은 불모지를 뒤지며 희귀한 재료를 찾아 주조법을 하나씩 시험해 보고 있다. 대부분 술에 취해 있어 극도로 충동적인 그라가스는 소동을 일으키는 데에는 전설적인 소질이 있는데, 그 소동은 밤샘 파티와 엄청난 기물 파손으로 이어지기 일쑤다. 그라가스를 보게 된다면 곧 음주, 그리고 파괴가 잇따를 것이라고 생각해도 좋다.", "speech": '" 니가 사는거라면, 나도 끼지! "', "img": "gra.jpg",
+          "nick1":"차가운 달의 분노", "champion1": "다이애나", "explain1": "다이애나는 오늘날 거의 사멸된 고대 종교 '루나리'의 전사이자, 은빛 달의 화신 그 자체다. 그녀는 드높은 타곤 산 꼭대기에 떠오른 천체들의 기운을 온몸으로 받아들였고, 겨울 밤 설원처럼 은은하게 빛나는 갑옷과 초승달 검으로 무장했다. 그러나 인간을 초월한 그녀의 힘이 무엇을 위한 것인지는 아직까지 분명하지 않다. 다이애나는 이 세상에서 자신에게 부여된 사명이 무엇인지 알아내려 애쓰고 있다.", "speech1": '" 새로운 달이 떠오르고 있다! "', "img1": "diana.jpg"},
+        "ASEF" : {"nick":"무자비한 폭풍", "champion": "볼리베어", "explain": "추종자들에게 볼리베어는 여전히 폭풍 그 자체이다. 강력하고 야만적이며 고집스러울 정도로 단호한 그는 프렐요드의 동토에 필멸자들이 나타나기 전부터 존재했다. 다른 반신들과 함께 일구어낸 그 땅을 무척이나 아끼는 볼리베어는 나약하기 그지없는 문명의 발달을 극도로 혐오했고, 결국 거칠고 폭력적이었던 옛 전통을 되찾기 위해 싸움을 시작한다. 그 앞을 가로막는 자는 누구든 볼리베어의 이빨과 발톱, 천둥의 위력을 맛보게 될 것이다.", "speech": '" 야생의 힘이다! "', "img": "voli.jpg",
+          "nick1":"하프 드래곤", "champion1": "쉬바나", "explain1": "쉬바나는 심장 속에서 불타는 룬 조각 덕분에 마력을 발휘하는 존재로, 평소에는 인간의 모습을 하고 있으나 사실은 강력한 힘을 지닌 용이다. 용의 형상으로 변하면 불타오르는 숨결로 적을 그 자리에서 태워버린다. 자르반 4세의 목숨을 구해준 후 그의 친위대에 들어갔지만, 데마시아 인들은 여전히 쉬바나에게 미심쩍은 눈길을 보내고 있다. 쉬바나로서도 친위대원 노릇이나 데마시아 인들의 신임을 받는 일이 쉽지만은 않다.", "speech1": '" 나는 곧 내 적수의 공포이니라! "', "img1": "shy.jpg"},
+        "ASDR" : {"nick":"데마시아의 호위무사", "champion": "신 짜오", "explain": "신 짜오는 데마시아를 통치하는 라이트실드 왕조에 충성을 바치는 결의에 가득 찬 전사이다. 신 짜오는 한 때 녹서스의 검투사로 싸우는 형벌에 처해져 셀 수 없이 많은 시합에서 살아남았지만 데마시아 군이 신 짜오를 해방시켜 준 후, 용감한 해방군인 데마시아 군에 목숨을 다해 충성하기로 맹세했다. 손에 익은 삼조창으로 무장한 신 짜오는 이제 자신을 받아들여 준 데마시아 왕국을 위해 어떤 적이 어떠한 상황에서 달려든다 해도 담대하게 맞선다.", "speech": '" 전장으로!! "', "img": "xin.jpg",
+      "nick1":"정령 주술사", "champion1": "우디르", "explain1": "호랑이의 민첩성과 흉포함, 거북이의 생명력, 곰의 힘, 불사조의 영원히 꺼지지 않는 불꽃. 이 모든 것은 우디르의 다른 이름이다. 우디르는 고대 정령의 힘을 물려받았고, 이 야성의 힘을 자유자재로 부릴 수 있는 인간을 초월한 존재다. 그는 네 정령의 힘을 끌어내어 자연의 질서를 어지럽히려는 자들로부터 이 땅을 수호해 왔다.", "speech1": '" 네놈 따위는 우리의<br> 분노를 막을 수 없다! "', "img1": "udyr.jpg"},
+        "ASDF" : {"nick":"기계 악동", "champion": "럼블", "explain": "럼블은 한 성깔 하는 젊은 요들로, 탁월한 발명가이기도 하다. 두 손과 고철 더미만으로 전기 작살과 소이 로켓을 장착한 거대 기계 로봇을 뚝딱 만들어냈다. 고철부품으로 만든 럼블의 작품을 비웃고 조롱하는 자가 있더라도 럼블은 눈 하나 깜박하지 않는다. 어차피 전장을 휩쓸 화염방사기는 자신의 손에 있으니까.", "speech": '" 자, 한번 붙어 보자고! "', "img": "rumble.jpg",
+          "nick1":"수줍은 꽃", "champion1": "릴리아", "explain1": "부끄럼을 많이 타는 사슴, 릴리아는 조심스럽게 아이오니아의 숲을 배회한다. 필멸자들의 모습에 매료되면서도, 동시에 공포를 느끼는 그녀는 꿈꾸는 나무에 인간들의 꿈이 흘러들지 않는 이유를 궁금해한다. 이제 릴리아는 마법이 깃든 나뭇가지를 손에 쥐고 아이오니아를 여행한다. 이뤄지지 못한 인간들의 꿈을 찾고, 그들의 빛을 가리고 있는 공포를 없애야만 릴리아 역시 활짝 피어날 수 있기 때문이다.", "speech1": '" 정말? 날?<br> 꿈이 이루어졌어! "', "img1": "lil.jpg"},
+      }
+        function start() {
+          $(".start").hide();
+          $(".question").show();
+          next();
+        }
+      $("#A").click(function(){
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+      });
+      $("#B").click(function(){
+        next();
+      });
+      function next(){
+        if (num == 5){
+          $(".question").hide();
+          $(".result").show();
+          var cha = "";
+          ($("#QA").val() < 1) ? cha += "A" : cha += "Q";
+          ($("#WS").val() < 1) ? cha += "S" : cha += "W";
+          ($("#ED").val() < 1) ? cha += "D" : cha += "E";
+          ($("#RF").val() < 1) ? cha += "F" : cha += "R";
+
+          $("#img").attr("src", result[cha]["img"]);
+          $("#nick").html(result[cha]["nick"]);
+          $("#champion").html(result[cha]["champion"]);
+          $("#speech").html(result[cha]["speech"]);
+          $("#explain").html(result[cha]["explain"]);
+          $("#img1").attr("src", result[cha]["img1"]);
+          $("#nick1").html(result[cha]["nick1"]);
+          $("#champion1").html(result[cha]["champion1"]);
+          $("#speech1").html(result[cha]["speech1"]);
+          $("#explain1").html(result[cha]["explain1"]);
+         } else {
+          $(".progress-bar").attr('style', 'width: calc(100/4*'+num+'%)');
+          $("#title").html(q[num]["title"]);
+          $("#type").val(q[num]["type"]);
+          $("#A").html(q[num]["A"]);
+          $("#B").html(q[num]["B"]);
+          num++;
+        }
+      }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6099361ac81b5688"></script>
+  </body>
+</html>
