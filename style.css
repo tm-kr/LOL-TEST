@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Gothic:wght@700&display=swap');
 body{
-  background-color: #000913;
-  color:white;
+  background-color: #032440;
   font-style: italic;
   font-family: 'Nanum Gothic', sans-serif;
 }
@@ -69,7 +68,15 @@ h5 {
   margin: 0 auto;
 }
 .layout{
+  background-color: #fff;
   margin: auto;
+}
+.layout a{
+  color:#0dcaf0;
+  text-decoration: none;
+}
+header{
+  text-align: center;
 }
 
 @media all and (min-width:768px) and (max-width: 1023px) {
@@ -126,7 +133,6 @@ h5 {
   }
   .layout{
     margin: auto;
-    margin-top: 2%;
     width: 650px;
   }
   .ltop{
